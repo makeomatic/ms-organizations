@@ -1,6 +1,14 @@
 {
   "id": "common.json",
   "definitions": {
-    
+    "userId": {
+      "type": "string",
+      "description": "User identificator"
+    },
+    "ISODate": {
+      "type": "string",
+      "format": "date-time",
+      "description": "ISO Date"
+    }
   }
 }

@@ -10,7 +10,7 @@ assert(name, 'Migration name must be specified');
 knex.migrate
   .make(name)
   .then((info) => {
-    console.info('Create migration:');
-    console.info(info);
+    service.log.info('Create migration:');
+    service.log.info(info);
     process.exit();
   });

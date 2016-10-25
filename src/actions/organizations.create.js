@@ -7,7 +7,11 @@
  * @apiSchema {jsonschema=../../schemas/organizations.create.response.json} apiSuccess
  */
 function organizationsCreateAction({ params }) {
-  return Promise.resolve(1);
+  const { organization } = this.services;
+
+  return organization
+    .create(params)
+    .call('toJSON');
 }
 
 organizationsCreateAction.schema = 'organizations.create.request';

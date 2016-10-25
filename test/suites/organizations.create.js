@@ -1,6 +1,10 @@
+const assert = require('assert');
+const Chance = require('chance');
 const config = require('../configs/service');
+const isISODate = require('../helpers/asserts/ISODate');
 const Service = require('../../src');
 
+const chance = new Chance();
 const service = new Service(config);
 
 describe('organizations.create', function suite() {
@@ -8,12 +12,22 @@ describe('organizations.create', function suite() {
   after('stoping service', () => service.close());
 
   it('should be able to create organization', () => {
-    const params = {};
+    const params = {
+      name: chance.name(),
+      ownerId: 'foo@bar.com',
+    };
 
     return service.amqp
       .publishAndWait('organizations.organizations.create', params)
-      .then(response => {
-        console.log(response);
+      .then((response) => {
+        assert.ok(response.alias);
+        assert.equal(isISODate(response.createdAt), true);
+        assert.equal(response.enabled, false);
+        assert.ok(response.id);
+        assert.deepEqual(response.meta, {});
+        assert.ok(response.name);
+        assert.equal(response.ownerId, 'foo@bar.com');
+        assert.equal(isISODate(response.updatedAt), true);
       });
   });
 });

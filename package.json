@@ -15,7 +15,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/makeomatic/ms-organizations.git"
+    "url": "https://github.com/makeomatic/ms-organizations.git"
   },
   "license": "MIT",
   "bugs": {
@@ -25,6 +25,7 @@
   "dependencies": {
     "bluebird": "^3.4.6",
     "bookshelf": "^0.10.2",
+    "bookshelf-uuid": "^1.0.0",
     "bunyan": "^1.8.3",
     "commander": "^2.9.0",
     "common-errors": "^1.0.0",
@@ -33,9 +34,11 @@
     "lodash": "^4.16.2",
     "ms-amqp-transport": "^4.0.0",
     "ms-conf": "^2.3.0",
+    "ms-flakeless": "^4.0.1",
     "ms-validation": "^3.0.0",
     "mservice": "^4.4.0",
-    "pg": "^6.1.0"
+    "pg": "^6.1.0",
+    "transliteration": "^1.1.11"
   },
   "devDependencies": {
     "apidoc": "^0.16.1",
@@ -44,6 +47,7 @@
     "babel-eslint": "^7.0.0",
     "babel-plugin-transform-strict-mode": "^6.18.0",
     "babel-register": "^6.18.0",
+    "chance": "^1.0.4",
     "codecov": "^1.0.1",
     "cz-conventional-changelog": "^1.2.0",
     "eslint": "^3.8.1",

@@ -5,10 +5,21 @@
   "required": ["ownerId", "name"],
   "properties": {
     "ownerId": {
-      "type": "string"
+      "$ref": "organization.json#/definitions/model/properties/ownerId"
     },
     "name": {
-      "type": "string"
+      "$ref": "organization.json#/definitions/model/properties/name"
+    },
+    "alias": {
+      "$ref": "organization.json#/definitions/model/properties/alias"
+    },
+    "enabled": {
+      "$ref": "organization.json#/definitions/model/properties/enabled",
+      "default": false
+    },
+    "meta": {
+      "$ref": "organization.json#/definitions/model/properties/meta",
+      "default": {}
     }
   }
 }
