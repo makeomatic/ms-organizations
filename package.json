@@ -1,0 +1,69 @@
+{
+  "name": "ms-organizations",
+  "description": "",
+  "main": "./lib/index.js",
+  "scripts": {
+    "compile": "rm -rf ./lib && babel -d ./lib ./src",
+    "doc": "cd schemas && apidoc -i ./../src/actions -v -o ./../docs",
+    "docker-release": "./docker-release.sh",
+    "lint": "eslint . --ext .json --ext .js",
+    "prepublish": "npm run lint && npm run compile",
+    "semantic-release": "semantic-release pre && npm publish && semantic-release post",
+    "start": "node ./bin/mservice.js | bunyan -o short",
+    "test": "npm run lint && ./test/docker.sh",
+    "test-dev": "SKIP_REBUILD=1 SKIP_SLEEP=1 ./test/docker.sh"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/makeomatic/ms-organizations.git"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/makeomatic/ms-organizations/issues"
+  },
+  "homepage": "https://github.com/makeomatic/ms-organizations#readme",
+  "dependencies": {
+    "bluebird": "^3.4.6",
+    "bookshelf": "^0.10.2",
+    "bunyan": "^1.8.3",
+    "commander": "^2.9.0",
+    "common-errors": "^1.0.0",
+    "is": "^3.2.0",
+    "knex": "^0.12.6",
+    "lodash": "^4.16.2",
+    "ms-amqp-transport": "^4.0.0",
+    "ms-conf": "^2.3.0",
+    "ms-validation": "^3.0.0",
+    "mservice": "^4.4.0",
+    "pg": "^6.1.0"
+  },
+  "devDependencies": {
+    "apidoc": "^0.16.1",
+    "apidoc-plugin-schema": "0.0.7",
+    "babel-cli": "^6.18.0",
+    "babel-eslint": "^7.0.0",
+    "babel-plugin-transform-strict-mode": "^6.18.0",
+    "babel-register": "^6.18.0",
+    "codecov": "^1.0.1",
+    "cz-conventional-changelog": "^1.2.0",
+    "eslint": "^3.8.1",
+    "eslint-config-airbnb-base": "^9.0.0",
+    "eslint-plugin-import": "^2.0.0",
+    "eslint-plugin-json": "^1.2.0",
+    "eslint-plugin-mocha": "^4.7.0",
+    "isparta": "^4.0.0",
+    "istanbul": "=0.4.4",
+    "json": "^9.0.4",
+    "latest-version-cli": "^1.0.0",
+    "mocha": "^3.1.0",
+    "semantic-release": "^4.3.5"
+  },
+  "release": {
+    "verifyConditions": []
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
+  }
+}

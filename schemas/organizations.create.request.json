@@ -1,0 +1,14 @@
+{
+  "id": "organizations.create.request",
+  "additionalProperties": false,
+  "type": "object",
+  "required": ["ownerId", "name"],
+  "properties": {
+    "ownerId": {
+      "type": "string"
+    },
+    "name": {
+      "type": "string"
+    }
+  }
+}
