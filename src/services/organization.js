@@ -1,6 +1,10 @@
 const transliteration = require('transliteration');
 
 const { slugify } = transliteration;
+const defaultParams = {
+  enabled: false,
+  meta: {},
+};
 
 class Organization {
   constructor(application) {
@@ -8,13 +12,11 @@ class Organization {
   }
 
   create(params) {
-    const attributes = Object.assign(params);
+    const attributes = Object.assign({}, params, defaultParams);
 
     if (attributes.alias === undefined) {
       attributes.alias = slugify(attributes.name);
     }
-
-    attributes.createdAt = new Date();
 
     const organization = new this.Model(attributes);
 

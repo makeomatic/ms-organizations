@@ -1,5 +1,5 @@
 /**
- * @api {amqp} <prefix>.organizations.create Create an organization
+ * @api {amqp} <prefix>.organizations.create Create organization
  * @apiVersion 1.0.0
  * @apiName organizations.create
  * @apiGroup Organization

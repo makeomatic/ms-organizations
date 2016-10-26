@@ -4,6 +4,10 @@
     "model": {
       "type": "object",
       "properties": {
+        "id": {
+          "type": "string",
+          "description": "Organization identificator"
+        },
         "ownerId": {
           "$ref": "common.json#/definitions/userId"
         },

@@ -1,4 +1,5 @@
 const { ActionTransport, routerExtension } = require('mservice');
+const fetcherExtension = require('../fetchers/extension');
 const path = require('path');
 
 const { amqp } = ActionTransport;
@@ -11,9 +12,10 @@ module.exports = {
       transports: [amqp],
     },
     extensions: {
-      enabled: ['preRequest', 'preResponse'],
+      enabled: ['preRequest', 'preResponse', 'postValidate'],
       register: [
         routerExtension('audit/log'),
+        fetcherExtension,
       ],
     },
   },

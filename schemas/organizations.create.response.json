@@ -1,4 +1,4 @@
 {
   "id": "organizations.create.response",
-  "type": "object"
+  "$ref": "organization.json#/definitions/model"
 }
