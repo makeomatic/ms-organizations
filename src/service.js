@@ -2,7 +2,7 @@ const Bookshelf = require('bookshelf');
 const bookshelfUUID = require('bookshelf-uuid');
 const Flakeless = require('ms-flakeless');
 const { globFiles } = require('ms-conf/lib/load-config');
-const merge = require('lodash/merge');
+const defaultsDeep = require('lodash/defaultsDeep');
 const MService = require('mservice');
 const organizationModelFactory = require('./models/organization');
 const OrganizationService = require('./services/organization');
@@ -14,7 +14,7 @@ const { ConnectorsTypes } = MService;
 class Service extends MService {
   constructor(config = {}) {
     //
-    super(merge({}, defaultConfig, config));
+    super(defaultsDeep(config, defaultConfig));
 
     // flakeless
     this.flakeless = new Flakeless(this.config.flakeless);
@@ -25,6 +25,7 @@ class Service extends MService {
     // models
     const bookshelf = this.bookshelf = Bookshelf(this.knex);
     bookshelf.plugin(bookshelfUUID, { type: () => this.flakeless.next() });
+    bookshelf.plugin('pagination');
     this.models = {
       Organization: organizationModelFactory(bookshelf),
     };

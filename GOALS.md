@@ -6,7 +6,7 @@ ORGANIZATIONS
 
 POST /organizations
 DELETE /organizations
-GET /organizations?filter=
+GET /organizations?filter=&sort=&page=
 GET /organizations/{id}
 
 MEMBERS

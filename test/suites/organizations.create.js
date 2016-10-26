@@ -15,6 +15,7 @@ describe('organizations.create', function suite() {
     const params = {
       name: chance.name(),
       ownerId: 'foo@bar.com',
+      meta: { foo: 'bar' },
     };
 
     return service.amqp
@@ -24,7 +25,7 @@ describe('organizations.create', function suite() {
         assert.equal(isISODate(response.createdAt), true);
         assert.equal(response.enabled, false);
         assert.ok(response.id);
-        assert.deepEqual(response.meta, {});
+        assert.deepEqual(response.meta, { foo: 'bar' });
         assert.ok(response.name);
         assert.equal(response.ownerId, 'foo@bar.com');
         assert.equal(isISODate(response.updatedAt), true);
