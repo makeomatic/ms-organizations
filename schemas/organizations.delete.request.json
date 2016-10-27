@@ -1,0 +1,11 @@
+{
+  "id": "organizations.delete.request",
+  "additionalProperties": false,
+  "type": "object",
+  "required": ["id"],
+  "properties": {
+    "id": {
+      "$ref": "organization.json#/definitions/model/properties/id"
+    }
+  }
+}

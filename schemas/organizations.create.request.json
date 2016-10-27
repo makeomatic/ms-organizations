@@ -1,0 +1,25 @@
+{
+  "id": "organizations.create.request",
+  "additionalProperties": false,
+  "type": "object",
+  "required": ["ownerId", "name"],
+  "properties": {
+    "ownerId": {
+      "$ref": "organization.json#/definitions/model/properties/ownerId"
+    },
+    "name": {
+      "$ref": "organization.json#/definitions/model/properties/name"
+    },
+    "alias": {
+      "$ref": "organization.json#/definitions/model/properties/alias"
+    },
+    "enabled": {
+      "$ref": "organization.json#/definitions/model/properties/enabled",
+      "default": false
+    },
+    "meta": {
+      "$ref": "organization.json#/definitions/model/properties/meta",
+      "default": {}
+    }
+  }
+}

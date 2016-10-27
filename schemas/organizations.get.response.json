@@ -1,0 +1,4 @@
+{
+  "id": "organizations.get.response",
+  "$ref": "organization.json#/definitions/model"
+}

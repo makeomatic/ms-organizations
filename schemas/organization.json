@@ -1,0 +1,40 @@
+{
+  "id": "organization.json",
+  "definitions": {
+    "model": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "Organization identificator"
+        },
+        "ownerId": {
+          "$ref": "common.json#/definitions/userId"
+        },
+        "name": {
+          "type": "string",
+          "description": "Name of organization"
+        },
+        "alias": {
+          "type": "string",
+          "description": "Slug for organization",
+          "pattern": "^[a-z\\-]+$"
+        },
+        "enabled": {
+          "type": "boolean",
+          "description": "Organization status (enabled/disabled)"
+        },
+        "meta": {
+          "type": "object",
+          "description": "Meta information of organization"
+        },
+        "createdAt": {
+          "$ref": "common.json#/definitions/ISODate"
+        },
+        "updatedAt": {
+          "$ref": "common.json#/definitions/ISODate"
+        }
+      }
+    }
+  }
+}

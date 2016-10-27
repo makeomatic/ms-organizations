@@ -1,0 +1,12 @@
+{
+  "id": "organizations.delete.response",
+  "type": "object",
+  "required": ["status"],
+  "properties": {
+    "status": {
+      "type": "string",
+      "description": "Status of request",
+      "enum": ["success"]
+    }
+  }
+}
