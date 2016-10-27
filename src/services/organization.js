@@ -1,4 +1,3 @@
-const defaultsDeep = require('lodash/defaultsDeep');
 const omit = require('lodash/omit');
 const transliteration = require('transliteration');
 
@@ -41,7 +40,7 @@ class Organization {
   }
 
   create(params) {
-    const attributes = defaultsDeep(params, defaultParams);
+    const attributes = Object.assign({}, defaultParams, params);
 
     if (attributes.alias === undefined) {
       attributes.alias = slugify(attributes.name);
