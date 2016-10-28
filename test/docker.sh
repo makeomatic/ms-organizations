@@ -31,7 +31,7 @@ $COMPOSE up -d
 
 if [[ "$SKIP_SLEEP" != "1" ]]; then
   # make sure that services are up
-  sleep 40
+  sleep 10
 fi
 
 echo "cleaning old coverage"

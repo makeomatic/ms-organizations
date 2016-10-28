@@ -36,7 +36,7 @@ const sortReducer = (query, sort) => {
 
 class Organization {
   constructor(application) {
-    this.Model = application.models.Organization;
+    this.Model = application.bookshelf.model('Organization');
   }
 
   create(params) {

@@ -1,4 +1,4 @@
-const fetcherFactory = require('../fetchers/factory');
+const fetcherFactory = require('../../fetchers/factory');
 
 const fetcher = fetcherFactory('Organization');
 
@@ -7,8 +7,8 @@ const fetcher = fetcherFactory('Organization');
  * @apiVersion 1.0.0
  * @apiName organizations.get
  * @apiGroup Organization
- * @apiSchema {jsonschema=../../schemas/organizations.get.request.json} apiParam
- * @apiSchema {jsonschema=../../schemas/organizations.get.response.json} apiSuccess
+ * @apiSchema {jsonschema=../../../schemas/organizations.get.request.json} apiParam
+ * @apiSchema {jsonschema=../../../schemas/organizations.get.response.json} apiSuccess
  */
 function organizationsGetAction({ model }) {
   return model.toJSON();

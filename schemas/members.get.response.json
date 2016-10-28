@@ -1,0 +1,4 @@
+{
+  "id": "members.get.response",
+  "$ref": "member.json#/definitions/model"
+}

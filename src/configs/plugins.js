@@ -5,5 +5,6 @@ module.exports = {
     'router',
     'amqp',
     'knex',
+    'redisCluster',
   ],
 };

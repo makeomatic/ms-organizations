@@ -1,0 +1,4 @@
+{
+  "id": "invites.accept.response",
+  "$ref": "member.json#/definitions/model"
+}

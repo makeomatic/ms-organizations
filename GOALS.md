@@ -4,15 +4,15 @@ MEMBERS
 * roles
 
 POST /organizations/{id}/members
-GET /organizations/{id}/members/{id}/access
+GET /organizations/{id}/members/{id}
 DELETE /organizations/{id}/members/{id}
 
 INVITE
 * organizationId
-* challengeType
-* destination
+* userId
 * token
 
+POST /organizations/{id}/members/invite/{id}/accept
 POST /organizations/{id}/members/invite
 DELETE /organizations/{id}/members/invite/{id}
 

@@ -3,13 +3,13 @@
  * @apiVersion 1.0.0
  * @apiName organizations.create
  * @apiGroup Organization
- * @apiSchema {jsonschema=../../schemas/organizations.create.request.json} apiParam
- * @apiSchema {jsonschema=../../schemas/organizations.create.response.json} apiSuccess
+ * @apiSchema {jsonschema=../../../schemas/organizations.create.request.json} apiParam
+ * @apiSchema {jsonschema=../../../schemas/organizations.create.response.json} apiSuccess
  */
 function organizationsCreateAction({ params }) {
-  const { organization } = this.services;
+  const organizationService = this.service('organization');
 
-  return organization
+  return organizationService
     .create(params)
     .call('toJSON');
 }
