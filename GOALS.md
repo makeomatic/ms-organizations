@@ -1,14 +1,3 @@
-ORGANIZATIONS
-* id
-* ownerId
-* name
-* meta
-
-POST /organizations
-DELETE /organizations
-GET /organizations?filter=&sort=&page=
-GET /organizations/{id}
-
 MEMBERS
 * organizationId
 * userId
