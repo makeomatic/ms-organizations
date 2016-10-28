@@ -3,13 +3,13 @@
  * @apiVersion 1.0.0
  * @apiName organizations.list
  * @apiGroup Organization
- * @apiSchema {jsonschema=../../schemas/organizations.list.request.json} apiParam
- * @apiSchema {jsonschema=../../schemas/organizations.list.response.json} apiSuccess
+ * @apiSchema {jsonschema=../../../schemas/organizations.list.request.json} apiParam
+ * @apiSchema {jsonschema=../../../schemas/organizations.list.response.json} apiSuccess
  */
 function organizationsListAction({ params }) {
-  const { organization } = this.services;
+  const organizationService = this.service('organization');
 
-  return organization
+  return organizationService
     .fetchAll(params)
     .call('toJSON');
 }

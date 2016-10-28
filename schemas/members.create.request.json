@@ -1,0 +1,18 @@
+{
+  "id": "members.create.request",
+  "additionalProperties": false,
+  "type": "object",
+  "required": ["organizationId", "userId"],
+  "properties": {
+    "organizationId": {
+      "$ref": "member.json#/definitions/model/properties/organizationId"
+    },
+    "userId": {
+      "$ref": "member.json#/definitions/model/properties/userId"
+    },
+    "roles": {
+      "$ref": "member.json#/definitions/model/properties/roles",
+      "default": []
+    }
+  }
+}

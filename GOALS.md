@@ -4,7 +4,7 @@ MEMBERS
 * roles
 
 POST /organizations/{id}/members
-GET /organizations/{id}/members/{id}/access
+GET /organizations/{id}/members/{id}
 DELETE /organizations/{id}/members/{id}
 
 INVITE
@@ -25,3 +25,5 @@ DELETE /organizations/{id}/members/invite/{id}
 7. мемберов можно удалять из организации
 8. можно высылать приглашения юзерам вступить в организацю
 9. можно анулировать приглашение
+
+* предложить пулреквест в bookshelf pagination для составного ключа

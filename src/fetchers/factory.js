@@ -2,35 +2,49 @@ const Errors = require('common-errors');
 
 const defaultOptions = {
   require: true,
-  modelKey: 'id',
-  requestKey: 'id',
+  key: {
+    // modelKey: requestKey
+    id: 'id',
+  },
+  setTo: 'model',
+};
+
+const keysReducer = (keys, request) => (query, key) => {
+  const requestKey = keys[key];
+  const requestValue = request[requestKey];
+
+  if (requestValue === undefined) {
+    throw new Errors.NotFoundError(`Key '${requestKey}' not found in request`);
+  }
+
+  query[key] = requestValue;
+
+  return query;
 };
 
 module.exports = function factory(modelName, options = {}) {
   return function fetcher(request) {
-    const Model = this.models[modelName];
+    const Model = this.bookshelf.model(modelName);
     const settings = Object.assign({}, defaultOptions, options);
-    const requestValue = request.params[settings.requestKey];
 
     if (Model === undefined) {
       throw new Errors.ArgumentError('model');
     }
 
-    if (requestValue === undefined) {
-      throw new Errors.NotFoundError('request', `Key ${settings.requestKey} not found in request`);
-    }
+    const query = Object
+      .keys(settings.key)
+      .reduce(keysReducer(settings.key, request.params), {});
 
-    const model = new Model({ [settings.modelKey]: requestValue });
-
-    return model
+    return Model
+      .forge(query)
       .fetch()
       .then((value) => {
         if (value === null && settings.require) {
-          throw new Errors.NotFoundError(`Entity #${requestValue} not found`);
+          throw new Errors.NotFoundError(`Entity '${modelName}' not found`);
         }
 
         return value;
       })
-      .tap(value => (request.model = value));
+      .tap(value => (request[settings.setTo] = value));
   };
 };

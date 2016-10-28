@@ -1,0 +1,26 @@
+{
+  "id": "member.json",
+  "definitions": {
+    "model": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["organizationId", "userId", "roles"],
+      "properties": {
+        "organizationId": {
+          "$ref": "organization.json#/definitions/model/properties/id"
+        },
+        "userId": {
+          "$ref": "common.json#/definitions/userId"
+        },
+        "roles": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "description": "e.g. ['admin']"
+          },
+          "description": "List of roles of member"
+        }
+      }
+    }
+  }
+}

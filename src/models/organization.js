@@ -1,6 +1,8 @@
-module.exports = bookshelf =>
-  bookshelf.Model.extend({
-    tableName: 'organizations',
-    uuid: true,
-    hasTimestamps: ['createdAt', 'updatedAt'],
-  });
+module.exports = {
+  tableName: 'organizations',
+  uuid: true,
+  hasTimestamps: ['createdAt', 'updatedAt'],
+  members: function getRelation() {
+    return this.hasMany('Member');
+  },
+};

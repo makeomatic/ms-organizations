@@ -1,0 +1,7 @@
+{
+  "id": "members.list.response",
+  "type": "array",
+  "items": {
+    "$ref": "member.json#/definitions/model"
+  }
+}

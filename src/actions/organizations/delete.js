@@ -1,4 +1,4 @@
-const fetcherFactory = require('../fetchers/factory');
+const fetcherFactory = require('../../fetchers/factory');
 
 const fetcher = fetcherFactory('Organization');
 
@@ -7,8 +7,8 @@ const fetcher = fetcherFactory('Organization');
  * @apiVersion 1.0.0
  * @apiName organizations.delete
  * @apiGroup Organization
- * @apiSchema {jsonschema=../../schemas/organizations.delete.request.json} apiParam
- * @apiSchema {jsonschema=../../schemas/organizations.delete.response.json} apiSuccess
+ * @apiSchema {jsonschema=../../../schemas/organizations.delete.request.json} apiParam
+ * @apiSchema {jsonschema=../../../schemas/organizations.delete.response.json} apiSuccess
  */
 function organizationsDeleteAction({ model }) {
   return model

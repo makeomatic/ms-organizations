@@ -1,0 +1,7 @@
+{
+  "id": "organizations.list.response",
+  "type": "array",
+  "items": {
+    "$ref": "organization.json#/definitions/model"
+  }
+}
