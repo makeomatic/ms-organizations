@@ -1,0 +1,11 @@
+{
+  "id": "invites.accept.request",
+  "additionalProperties": false,
+  "type": "object",
+  "required": ["token"],
+  "properties": {
+    "token": {
+      "$ref": "invite.json#/definitions/model/properties/token"
+    }
+  }
+}

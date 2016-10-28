@@ -9,10 +9,10 @@ DELETE /organizations/{id}/members/{id}
 
 INVITE
 * organizationId
-* challengeType
-* destination
+* userId
 * token
 
+POST /organizations/{id}/members/invite/{id}/accept
 POST /organizations/{id}/members/invite
 DELETE /organizations/{id}/members/invite/{id}
 
@@ -25,5 +25,3 @@ DELETE /organizations/{id}/members/invite/{id}
 7. мемберов можно удалять из организации
 8. можно высылать приглашения юзерам вступить в организацю
 9. можно анулировать приглашение
-
-* предложить пулреквест в bookshelf pagination для составного ключа

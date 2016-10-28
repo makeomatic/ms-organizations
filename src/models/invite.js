@@ -1,9 +1,6 @@
 module.exports = {
-  tableName: 'members',
+  tableName: 'invites',
   // composite key doesn't work
   idAttribute: null,
   hasTimestamps: ['createdAt', 'updatedAt'],
-  organization: function getRelation() {
-    return this.belongsTo('Organization');
-  },
 };

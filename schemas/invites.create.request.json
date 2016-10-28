@@ -1,0 +1,14 @@
+{
+  "id": "invites.create.request",
+  "additionalProperties": false,
+  "type": "object",
+  "required": ["organizationId", "userId"],
+  "properties": {
+    "organizationId": {
+      "$ref": "invite.json#/definitions/model/properties/organizationId"
+    },
+    "userId": {
+      "$ref": "invite.json#/definitions/model/properties/userId"
+    }
+  }
+}
